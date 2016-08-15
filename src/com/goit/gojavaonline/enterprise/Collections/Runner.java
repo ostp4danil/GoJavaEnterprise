@@ -25,7 +25,7 @@ public class Runner {
             System.out.println("\ngFOR " + i + " THOUSANDS: ");
             CollectionParametersTable collectionParametersTable = new CollectionParametersTable(timeCheckers, i);
             collectionParametersTable.printTable();
-            collectionParametersTable.writeTableToFile("collections.txt");
+            collectionParametersTable.writeTableToFile("collections" + i + ".txt");
         }
 
     }
