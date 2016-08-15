@@ -1,6 +1,9 @@
 package com.goit.gojavaonline.enterprise.Collections;
 
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Formatter;
 
@@ -15,40 +18,53 @@ public class CollectionParametersTable {
         this.thousands = thousands;
     }
 
-
-    public void printTable() {
-        printColumns();
-        printFields();
-    }
-
-    private void printFields() {
-        int i = 0;
-        for (TimeChecker container : containers) {
-            Formatter fields = new Formatter();
-            fields.format("%10.10s",containersNames[i]);
-            fields.format("%20.20s", container.checkPopulate(thousands));
-            fields.format("%20.20s", container.checkAdding());
-            fields.format("%20.20s", container.checkGetting());
-            fields.format("%20.20s", container.checkRemoving());
-            fields.format("%20.20s", container.checkContains());
-            fields.format("%20.20s", container.checkIteratorAdd());
-            fields.format("%20.20s", container.checkIteratorRemove());
-            System.out.println(fields);
-            i++;
+    public void writeTableToFile(String fileName){
+        File file = new File(fileName);
+            try {
+                FileWriter out = new FileWriter(file);
+                out.write(getColumns());
+                out.write(getFields());
+                out.close();
+            } catch (IOException e) {
+                System.out.println(e.getLocalizedMessage());
+            }
         }
 
+    public void printTable() {
+        System.out.println(getColumns());
+        System.out.println(getFields());
     }
 
-    private void printColumns() {
+    private String getFields() {
+        StringBuffer fields = new StringBuffer();
+        int i = 0;
+        for (TimeChecker container : containers) {
+            Formatter fieldsFormatter = new Formatter();
+            fieldsFormatter.format("%10.10s",containersNames[i]);
+            fieldsFormatter.format("%20.20s", container.checkPopulate(thousands));
+            fieldsFormatter.format("%20.20s", container.checkGetting());
+            fieldsFormatter.format("%20.20s", container.checkRemoving());
+            fieldsFormatter.format("%20.20s", container.checkAdding());
+            fieldsFormatter.format("%20.20s", container.checkContains());
+            fieldsFormatter.format("%20.20s", container.checkIteratorAdd());
+            fieldsFormatter.format("%20.20s", container.checkIteratorRemove());
+            fields.append("\n");
+            fields.append(fieldsFormatter.toString());
+            i++;
+        }
+        return fields.toString();
+    }
+
+    private String getColumns() {
         Formatter columns = new Formatter();
-        columns.format("%30.15s", "add");
+        columns.format("%30.15s", "populate");
         columns.format("%20.15s", "get");
         columns.format("%20.15s", "remove");
+        columns.format("%20.15s", "add");
         columns.format("%20.15s", "contains");
-        columns.format("%20.15s", "populate");
         columns.format("%20.15s", "iterator.add");
         columns.format("%20.15s", "iterator.remove");
-        System.out.println(columns);
+        return columns.toString();
     }
 
 
