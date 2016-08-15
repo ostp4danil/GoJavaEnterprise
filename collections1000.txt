@@ -1,0 +1,5 @@
+                      populate                 get              remove                 add            contains        iterator.add     iterator.remove
+ ArrayList          1225547596                 327             4021025                 279             2730123             1269839             1175668
+LinkedList            28888475             3779510             9876970                 194             9337373                 485                 322
+   HashSet           304204640                   0                 965                 635                 650                   0                   0
+   HashMap          3354672378                   0                2117                 589                1237                   0                   0

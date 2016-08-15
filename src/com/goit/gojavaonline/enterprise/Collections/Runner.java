@@ -22,7 +22,7 @@ public class Runner {
         timeCheckers.add(treeSetTimeChecker);
 
         for (int i = 10; i <= 1000; i = i * 10) {
-            System.out.println("\ngFOR " + i + " THOUSANDS: ");
+            System.out.println("\nFOR " + i + " THOUSANDS: ");
             CollectionParametersTable collectionParametersTable = new CollectionParametersTable(timeCheckers, i);
             collectionParametersTable.printTable();
             collectionParametersTable.writeTableToFile("collections" + i + ".txt");
