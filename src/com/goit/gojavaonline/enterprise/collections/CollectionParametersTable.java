@@ -11,7 +11,6 @@ public class CollectionParametersTable {
 
     private Collection<TimeChecker> timeCheckers;
     private final int thousands;
-    private String[] containersNames = new String[]{"ArrayList", "LinkedList", "HashSet", "HashMap"};
 
     public CollectionParametersTable(Collection<TimeChecker> timeCheckers, int thousands) {
         this.timeCheckers = timeCheckers;
