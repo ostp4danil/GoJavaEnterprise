@@ -1,4 +1,4 @@
-package com.goit.gojavaonline.enterprise.Collections;
+package com.goit.gojavaonline.enterprise.collections;
 
 
 import java.io.File;
@@ -9,12 +9,12 @@ import java.util.Formatter;
 
 public class CollectionParametersTable {
 
-    private Collection<TimeChecker> containers;
+    private Collection<TimeChecker> timeCheckers;
     private final int thousands;
     private String[] containersNames = new String[]{"ArrayList", "LinkedList", "HashSet", "HashMap"};
 
-    public CollectionParametersTable(Collection<TimeChecker> containers, int thousands) {
-        this.containers = containers;
+    public CollectionParametersTable(Collection<TimeChecker> timeCheckers, int thousands) {
+        this.timeCheckers = timeCheckers;
         this.thousands = thousands;
     }
 
@@ -36,18 +36,19 @@ public class CollectionParametersTable {
     }
 
     private String getFields() {
-        StringBuffer fields = new StringBuffer();
+        StringBuilder fields = new StringBuilder();
         int i = 0;
-        for (TimeChecker container : containers) {
+        for (TimeChecker timeChecker : timeCheckers) {
+            Collection container = timeChecker.getCollection();
             Formatter fieldsFormatter = new Formatter();
-            fieldsFormatter.format("%10.10s",containersNames[i]);
-            fieldsFormatter.format("%20.20s", container.checkPopulate(thousands));
-            fieldsFormatter.format("%20.20s", container.checkGetting());
-            fieldsFormatter.format("%20.20s", container.checkRemoving());
-            fieldsFormatter.format("%20.20s", container.checkAdding());
-            fieldsFormatter.format("%20.20s", container.checkContains());
-            fieldsFormatter.format("%20.20s", container.checkIteratorAdd());
-            fieldsFormatter.format("%20.20s", container.checkIteratorRemove());
+            fieldsFormatter.format("%10.10s",container.getClass().getSimpleName());
+            fieldsFormatter.format("%20.20s", timeChecker.checkPopulate(thousands));
+            fieldsFormatter.format("%20.20s", timeChecker.checkGetting());
+            fieldsFormatter.format("%20.20s", timeChecker.checkRemoving());
+            fieldsFormatter.format("%20.20s", timeChecker.checkAdding());
+            fieldsFormatter.format("%20.20s", timeChecker.checkContains());
+            fieldsFormatter.format("%20.20s", timeChecker.checkIteratorAdd());
+            fieldsFormatter.format("%20.20s", timeChecker.checkIteratorRemove());
             fields.append("\n");
             fields.append(fieldsFormatter.toString());
             i++;
@@ -57,7 +58,8 @@ public class CollectionParametersTable {
 
     private String getColumns() {
         Formatter columns = new Formatter();
-        columns.format("%30.15s", "populate");
+        columns.format("%10.10s", "Container");
+        columns.format("%20.15s", "populate");
         columns.format("%20.15s", "get");
         columns.format("%20.15s", "remove");
         columns.format("%20.15s", "add");
