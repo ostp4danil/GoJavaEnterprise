@@ -27,7 +27,7 @@ public class TimeChecker {
         return end - start;
     }
 
-    public long checkGetting() {
+    public long meterGetting() {
         long time = 0;
         try {
             for (int i = 0; i <= meter; i++) {
@@ -42,7 +42,7 @@ public class TimeChecker {
         }
     }
 
-    public long checkAdding() {
+    public long meterAdding() {
         long time = 0;
         for (int i = 0; i <= meter; i++) {
             final long start = System.nanoTime();
@@ -54,7 +54,7 @@ public class TimeChecker {
         return time / meter;
     }
 
-    public long checkRemoving() {
+    public long meterRemoving() {
         long time = 0;
         for (int i = 0; i <= meter; i++) {
             int removingElement = random.nextInt(collection.size() / 2);
@@ -66,7 +66,7 @@ public class TimeChecker {
         return time / meter;
     }
 
-    public long checkContains() {
+    public long meterContains() {
         long time = 0;
         for (int i = 0; i <= meter; i++) {
             final long start = System.nanoTime();
@@ -77,7 +77,7 @@ public class TimeChecker {
         return time / meter;
     }
 
-    public long checkIteratorAdd() {
+    public long meterIteratorAdd() {
         long time = 0;
         try {
             for (int i = 0; i <= meter; i++) {
@@ -92,7 +92,7 @@ public class TimeChecker {
         }
     }
 
-    public long checkIteratorRemove() {
+    public long meterIteratorRemove() {
         long time = 0;
         try {
             for (int i = 0; i<= meter; i++) {

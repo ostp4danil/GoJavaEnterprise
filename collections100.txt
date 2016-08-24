@@ -1,5 +1,5 @@
  Container            populate                 get              remove                 add            contains        iterator.add     iterator.remove
- ArrayList             8301050                 292              387554                 188              332385              134060               93556
-LinkedList             7235978              330448              826794                 324              540537                 698                 891
-   HashSet            17125134                   0                1657                 462                 644                   0                   0
-   TreeSet            79170320                   0                2796                 705                1790                   0                   0
+ ArrayList            10617615                 440              608994                 390              344121               70546               73750
+LinkedList             8553698              460703              739361                 356              977774                1043                1909
+   HashSet            51597786                   0                3311                 574                 827                   0                   0
+   TreeSet            82291136                   0                1918                 500                1674                   0                   0

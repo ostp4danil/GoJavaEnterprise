@@ -17,17 +17,17 @@ public class CollectionParametersTable {
         this.thousands = thousands;
     }
 
-    public void writeTableToFile(String fileName){
+    public void writeTableToFile(String fileName) {
         File file = new File(fileName);
-            try {
-                FileWriter out = new FileWriter(file);
-                out.write(getColumns());
-                out.write(getFields());
-                out.close();
-            } catch (IOException e) {
-                System.out.println(e.getLocalizedMessage());
-            }
+        try {
+            FileWriter out = new FileWriter(file);
+            out.write(getColumns());
+            out.write(getFields());
+            out.close();
+        } catch (IOException e) {
+            System.out.println(e.getLocalizedMessage());
         }
+    }
 
     public void printTable() {
         System.out.println(getColumns());
@@ -40,14 +40,14 @@ public class CollectionParametersTable {
         for (TimeChecker timeChecker : timeCheckers) {
             Collection container = timeChecker.getCollection();
             Formatter fieldsFormatter = new Formatter();
-            fieldsFormatter.format("%10.10s",container.getClass().getSimpleName());
+            fieldsFormatter.format("%10.10s", container.getClass().getSimpleName());
             fieldsFormatter.format("%20.20s", timeChecker.checkPopulate(thousands));
-            fieldsFormatter.format("%20.20s", timeChecker.checkGetting());
-            fieldsFormatter.format("%20.20s", timeChecker.checkRemoving());
-            fieldsFormatter.format("%20.20s", timeChecker.checkAdding());
-            fieldsFormatter.format("%20.20s", timeChecker.checkContains());
-            fieldsFormatter.format("%20.20s", timeChecker.checkIteratorAdd());
-            fieldsFormatter.format("%20.20s", timeChecker.checkIteratorRemove());
+            fieldsFormatter.format("%20.20s", timeChecker.meterGetting());
+            fieldsFormatter.format("%20.20s", timeChecker.meterRemoving());
+            fieldsFormatter.format("%20.20s", timeChecker.meterAdding());
+            fieldsFormatter.format("%20.20s", timeChecker.meterContains());
+            fieldsFormatter.format("%20.20s", timeChecker.meterIteratorAdd());
+            fieldsFormatter.format("%20.20s", timeChecker.meterIteratorRemove());
             fields.append("\n");
             fields.append(fieldsFormatter.toString());
             i++;
