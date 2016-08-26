@@ -15,5 +15,7 @@ public class Main {
         Executor<Building> buildingExecutor = new BuildingExecutor();
         buildingExecutor.addTask(buildingTask, buildingValidator);
         buildingExecutor.execute();
+        System.out.println("Valid: " + buildingExecutor.getValidResults());
+        System.out.println("Invalid: " + buildingExecutor.getInvalidResults());
     }
 }
