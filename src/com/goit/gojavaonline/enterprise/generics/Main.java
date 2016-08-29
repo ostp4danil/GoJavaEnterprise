@@ -15,17 +15,25 @@ public class Main {
         Validator<Building> buildingValidator = new BuildingValidator();
         Executor<Building> buildingExecutor = new BuildingExecutor();
 
-        buildings.add(new House(10,120,30,"USSR",3));
-        buildings.add(new Restaurant(3,250,-1,"Modern",200));
-        buildings.add(new Office(1,150,3,"Minimalizm",300));
+        buildings.add(new House(10, 120, 30, "USSR", 3));
+        buildings.add(new Restaurant(3, 250, -1, "Modern", 200));
+        buildings.add(new Office(1, 150, 3, "Minimalizm", 300));
 
-        for (Building building : buildings) {
-            buildingExecutor.addTask(new BuildingTask(building),buildingValidator);
+        try {
+            for (Building building : buildings) {
+                buildingExecutor.addTask(new BuildingTask(building), buildingValidator);
+            }
+        } catch (IllegalStateException e) {
+            System.out.println("Executor had been called!" + e.getLocalizedMessage());
         }
 
 
         buildingExecutor.execute();
-        System.out.println("Valid: " + buildingExecutor.getValidResults());
-        System.out.println("Invalid: " + buildingExecutor.getInvalidResults());
+        try {
+            System.out.println("Valid: " + buildingExecutor.getValidResults());
+            System.out.println("Invalid: " + buildingExecutor.getInvalidResults());
+        } catch (IllegalStateException e) {
+            System.out.println("Executor had not been called yet!" + e.getLocalizedMessage());
+        }
     }
 }
