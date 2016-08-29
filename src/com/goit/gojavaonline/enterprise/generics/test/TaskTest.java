@@ -23,12 +23,12 @@ public class TaskTest {
 
 
     @Test(expected = NullPointerException.class)
-    public void taskTest_When_Transmits_Null_Then_Exception(){
+    public void execute_When_Transmits_Null_Then_Exception(){
         buildingTask = new BuildingTask(buildings.iterator().next());
     }
 
     @Test
-    public void taskTest(){
+    public void task_When_Square_10_Then_Volume_100(){
         buildingTask = new BuildingTask(new Office(10,10,10,"test",10));
         double result = buildingTask.getResult().getVolume();
         Assert.assertEquals(100,result);

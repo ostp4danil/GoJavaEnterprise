@@ -5,10 +5,10 @@ import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 import java.util.List;
 
 
-public interface Task <E> {
+public interface Task <T> {
 
     void execute();
 
-    E getResult();
+    T getResult();
 
 }

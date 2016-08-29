@@ -9,7 +9,6 @@ import com.goit.gojavaonline.enterprise.generics.buildings.House;
 import com.goit.gojavaonline.enterprise.generics.Executor;
 import com.goit.gojavaonline.enterprise.generics.Task;
 import com.goit.gojavaonline.enterprise.generics.Validator;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,13 +21,13 @@ public class ExecutorTest {
     @Before
     public void setUp() throws Exception {
         buildingExecutor = new BuildingExecutor();
-        buildingValidator = new BuildingValidator();
+        buildingValidator = new BuildingValidator(100);
         buildingTask = new BuildingTask(new House(10, 20, 30, "HaiTak", 50));
     }
 
 
     @Test(expected = IllegalStateException.class)
-    public void executeTest_When_IsNotExecuted_Then_Exception(){
+    public void execute_When_IsNotExecuted_Then_Exception(){
         buildingExecutor.addTask(buildingTask, buildingValidator);
         buildingExecutor.getInvalidResults();
     }

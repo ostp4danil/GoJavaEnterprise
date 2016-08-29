@@ -17,7 +17,7 @@ public class ValidatorTest {
 
     @Before
     public void setUp() throws Exception {
-        buildingValidator = new BuildingValidator();
+        buildingValidator = new BuildingValidator(100);
     }
 
     @Test
