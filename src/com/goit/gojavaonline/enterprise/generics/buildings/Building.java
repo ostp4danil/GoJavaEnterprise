@@ -4,19 +4,25 @@ public abstract class Building {
 
     private int age;
     private int square;
+    private int height;
+    private double volume;
     private String genre;
 
-    public Building(int age, int square, String genre) {
+
+    public Building(int age, int square, int height, String genre) {
         this.age = age;
         this.square = square;
         this.genre = genre;
+        this.height = height;
     }
 
     @Override
     public String toString() {
-        return "Building: " +
+        return "Building{" +
                 "age=" + age +
                 ", square=" + square +
+                ", height=" + height +
+                ", volume=" + volume +
                 ", genre='" + genre + '\'' +
                 '}';
     }
@@ -29,7 +35,19 @@ public abstract class Building {
         return square;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
     public String getGenre() {
         return genre;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
     }
 }

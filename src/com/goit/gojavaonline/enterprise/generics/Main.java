@@ -1,9 +1,6 @@
 package com.goit.gojavaonline.enterprise.generics;
 
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
-import com.goit.gojavaonline.enterprise.generics.interfaces.Executor;
-import com.goit.gojavaonline.enterprise.generics.interfaces.Task;
-import com.goit.gojavaonline.enterprise.generics.interfaces.Validator;
 
 /**
  * Created by Danil-MAC on 8/26/16.

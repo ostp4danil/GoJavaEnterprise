@@ -7,10 +7,15 @@ public class Office extends Building{
 
     private int staff;
 
-    public Office(int age, int square, String genre, int staff) {
-        super(age, square, genre);
+    public Office(int age, int square, int height, String genre, int staff) {
+        super(age, square,height, genre);
         this.staff = staff;
     }
 
-
+    @Override
+    public String toString() {
+        return "Office{" + super.toString() +
+                "staff=" + staff +
+                '}';
+    }
 }

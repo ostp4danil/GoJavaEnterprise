@@ -1,26 +1,22 @@
 package com.goit.gojavaonline.enterprise.generics;
 
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
-import com.goit.gojavaonline.enterprise.generics.buildings.House;
-import com.goit.gojavaonline.enterprise.generics.buildings.Restaurant;
-import com.goit.gojavaonline.enterprise.generics.interfaces.Task;
 
 import java.util.*;
 
 public class BuildingTask implements Task <Building>{
 
-    private List<Building> buildings;
+    private Building building;
 
-
-    public void execute() {
-        buildings = new ArrayList<>();
-        buildings.add(new House(10,100,"Domik",3));
-        buildings.add(new House(10,100,"Domik",3));
-        buildings.add(new Restaurant(5,75,"Almamater",200));
-
+    public BuildingTask(Building building) {
+        this.building = building;
     }
 
-    public List<? extends Building> getResult() {
-        return  buildings;
+    public void execute() {
+        building.setVolume(building.getSquare()*building.getHeight());
+    }
+
+    public Building getResult() {
+        return  building;
     }
 }

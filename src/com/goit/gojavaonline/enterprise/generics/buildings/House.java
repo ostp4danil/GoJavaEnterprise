@@ -7,8 +7,15 @@ public class House extends Building{
 
     private int population;
 
-    public House(int age, int square, String genre, int population) {
-        super(age, square, genre);
+    public House(int age, int square, int height, String genre, int population) {
+        super(age, square, height,  genre);
         this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        return "House{" + super.toString() +
+                "population=" + population +
+                '}';
     }
 }
