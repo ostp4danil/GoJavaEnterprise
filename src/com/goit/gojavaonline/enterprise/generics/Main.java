@@ -10,7 +10,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Task<? extends Building>> buildingTasks = new ArrayList<>();
         List<Building> buildings = new ArrayList<>();
         Validator<Building> buildingValidator = new BuildingValidator();
         Executor<Building> buildingExecutor = new BuildingExecutor();
