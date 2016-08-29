@@ -23,7 +23,7 @@ public class ExecutorTest {
     public void setUp() throws Exception {
         buildingExecutor = new BuildingExecutor();
         buildingValidator = new BuildingValidator();
-        buildingTask = new BuildingTask();
+        buildingTask = new BuildingTask(new House(10, 20, 30, "HaiTak", 50));
     }
 
 
@@ -31,14 +31,7 @@ public class ExecutorTest {
     public void executeTest_When_IsNotExecuted_Then_Exception(){
         buildingExecutor.addTask(buildingTask, buildingValidator);
         buildingExecutor.getInvalidResults();
-
     }
 
-    @Test
-    public void validatorTest(){
-        buildingValidator.isValid(new House(-20, -30, "Dom", 0));
-        Assert.assertEquals(buildingValidator.isValid(new House(-20, -30, "Dom", 0)),false);
-
-    }
 
 }

@@ -2,7 +2,6 @@ package com.goit.gojavaonline.enterprise.generics;
 
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 
-import java.util.*;
 
 public class BuildingTask implements Task <Building>{
 

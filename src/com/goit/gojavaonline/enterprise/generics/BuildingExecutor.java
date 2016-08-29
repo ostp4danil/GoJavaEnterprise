@@ -8,51 +8,48 @@ import java.util.List;
 
 public class BuildingExecutor implements Executor<Building> {
 
-    private List<? extends Building> buildings = new ArrayList<>();
     private List<Task<? extends Building>> taskList = new ArrayList<>();
     private Validator<? super Building> validator;
-    private List<? extends Building> validResults = new ArrayList<>();
-    private List<? extends Building> invalidResults = new ArrayList<>();
+    private List<? super Building> validResults = new ArrayList<>();
+    private List<? super Building> invalidResults = new ArrayList<>();
     private boolean isExecuted = false;
     private boolean validatorIsExist = false;
 
 
     public void addTask(Task<? extends Building> task) {
-        if (task != null) {
+        if (task != null && isExecuted) {
             taskList.add(task);
-        }
+        } else throw new IllegalStateException();
     }
 
     public void addTask(Task<? extends Building> task, Validator<? super Building> validator) {
-        if (task != null) {
-            taskList.add(task);
-        }
         if (!validatorIsExist) {
             this.validator = validator;
             validatorIsExist = true;
         }
-
+        addTask(task);
     }
 
     public void execute() {
         if (isExecuted) {
             throw new IllegalStateException();
         }
-        for (Building building : buildings) {
-            if (validator.isValid(building)) {
-
+        for (Task<? extends Building> task : taskList) {
+            task.execute();
+            if (validator.isValid(task.getResult())) {
+                validResults.add(task.getResult());
             } else {
-
+                invalidResults.add(task.getResult());
             }
         }
         isExecuted = true;
     }
 
-    public List<? extends Building> getValidResults() {
+    public List<? super Building> getValidResults() {
         return validResults;
     }
 
-    public List<? extends Building> getInvalidResults() {
+    public List<? super Building> getInvalidResults() {
         return invalidResults;
     }
 }

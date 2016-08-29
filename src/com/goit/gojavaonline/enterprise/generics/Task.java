@@ -7,10 +7,8 @@ import java.util.List;
 
 public interface Task <E> {
 
-    // Метод запускает таск на выполнение
     void execute();
 
-    // Возвращает результат выполнения
     E getResult();
 
 }
