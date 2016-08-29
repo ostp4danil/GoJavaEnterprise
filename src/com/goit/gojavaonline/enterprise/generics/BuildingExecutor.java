@@ -17,7 +17,7 @@ public class BuildingExecutor implements Executor<Building> {
 
 
     public void addTask(Task<? extends Building> task) {
-        if (task != null && isExecuted) {
+        if (task != null || isExecuted) {
             taskList.add(task);
         } else throw new IllegalStateException();
     }
