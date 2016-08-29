@@ -24,7 +24,7 @@ public class Main {
                 buildingExecutor.addTask(new BuildingTask(building), buildingValidator);
             }
         } catch (IllegalStateException e) {
-            System.out.println("Executor had been called!" + e.getLocalizedMessage());
+            System.out.println("Executor should be called first!" + e.getLocalizedMessage());
         }
 
 
@@ -33,7 +33,7 @@ public class Main {
             System.out.println("Valid: " + buildingExecutor.getValidResults());
             System.out.println("Invalid: " + buildingExecutor.getInvalidResults());
         } catch (IllegalStateException e) {
-            System.out.println("Executor had not been called yet!" + e.getLocalizedMessage());
+            System.out.println("Executor has not been called yet!" + e.getLocalizedMessage());
         }
     }
 }
