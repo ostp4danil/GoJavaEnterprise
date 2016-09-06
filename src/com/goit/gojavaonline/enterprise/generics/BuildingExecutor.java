@@ -10,8 +10,8 @@ public class BuildingExecutor implements Executor<Building> {
 
     private List<Task<? extends Building>> taskList = new ArrayList<>();
     private Validator<? super Building> validator;
-    private List<? super Building> validResults = new ArrayList<>();
-    private List<? super Building> invalidResults = new ArrayList<>();
+    private List<Building> validResults = new ArrayList<>();
+    private List<Building> invalidResults = new ArrayList<>();
     private boolean isExecuted = false;
     private boolean validatorIsExist = false;
 

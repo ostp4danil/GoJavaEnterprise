@@ -21,7 +21,7 @@ public class ValidatorTest {
     }
 
     @Test
-    public void validatorTest(){
+    public void validator_WhenIncorrectDatasThenFalse(){
         buildingValidator.isValid(new House(-20, -30, 50, "Dom", 0));
         Assert.assertEquals(buildingValidator.isValid(new House(-20, -30, 12, "Dom", 0)),false);
     }

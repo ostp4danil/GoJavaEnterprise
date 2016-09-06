@@ -1,14 +1,10 @@
 package com.goit.gojavaonline.enterprise.generics.test;
 
 import com.goit.gojavaonline.enterprise.generics.BuildingTask;
-import com.goit.gojavaonline.enterprise.generics.BuildingValidator;
 import com.goit.gojavaonline.enterprise.generics.Task;
-import com.goit.gojavaonline.enterprise.generics.Validator;
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
-import com.goit.gojavaonline.enterprise.generics.buildings.House;
 import com.goit.gojavaonline.enterprise.generics.buildings.Office;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -23,12 +19,12 @@ public class TaskTest {
 
 
     @Test(expected = NullPointerException.class)
-    public void execute_When_Transmits_Null_Then_Exception(){
+    public void execute_whenTransmitsNullThenException(){
         buildingTask = new BuildingTask(buildings.iterator().next());
     }
 
     @Test
-    public void task_When_Square_10_Then_Volume_100(){
+    public void task_whenSquare10ThenVolume100(){
         buildingTask = new BuildingTask(new Office(10,10,10,"test",10));
         double result = buildingTask.getResult().getVolume();
         Assert.assertEquals(100,result);

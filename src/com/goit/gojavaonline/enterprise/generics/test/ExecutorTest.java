@@ -27,7 +27,7 @@ public class ExecutorTest {
 
 
     @Test(expected = IllegalStateException.class)
-    public void execute_When_IsNotExecuted_Then_Exception(){
+    public void execute_WhenIsNotExecutedThenIllegalStateException(){
         buildingExecutor.addTask(buildingTask, buildingValidator);
         buildingExecutor.getInvalidResults();
     }
