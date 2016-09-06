@@ -26,7 +26,7 @@ public class TaskTest {
     @Test
     public void task_whenSquare10ThenVolume100(){
         buildingTask = new BuildingTask(new Office(10,10,10,"test",10));
-        double result = buildingTask.getResult().getVolume();
+        double result = buildingTask.getResult().getCapacity();
         Assert.assertEquals(100,result);
     }
 }

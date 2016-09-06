@@ -3,7 +3,7 @@ package com.goit.gojavaonline.enterprise.generics.test;
 
 import com.goit.gojavaonline.enterprise.generics.BuildingExecutor;
 import com.goit.gojavaonline.enterprise.generics.BuildingTask;
-import com.goit.gojavaonline.enterprise.generics.BuildingValidator;
+import com.goit.gojavaonline.enterprise.generics.BuildingCapacityValidator;
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 import com.goit.gojavaonline.enterprise.generics.buildings.House;
 import com.goit.gojavaonline.enterprise.generics.Executor;
@@ -21,7 +21,7 @@ public class ExecutorTest {
     @Before
     public void setUp() throws Exception {
         buildingExecutor = new BuildingExecutor();
-        buildingValidator = new BuildingValidator(100);
+        buildingValidator = new BuildingCapacityValidator(100);
         buildingTask = new BuildingTask(new House(10, 20, 30, "HaiTak", 50));
     }
 

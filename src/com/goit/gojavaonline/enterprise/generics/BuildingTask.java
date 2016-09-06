@@ -12,7 +12,7 @@ public class BuildingTask implements Task <Building>{
     }
 
     public void execute() {
-        building.setVolume(building.getSquare()*building.getHeight());
+        building.setCapacity(building.getSquare()*building.getHeight());
     }
 
     public Building getResult() {

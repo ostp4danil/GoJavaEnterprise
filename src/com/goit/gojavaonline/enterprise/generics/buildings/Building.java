@@ -43,11 +43,11 @@ public abstract class Building {
         return genre;
     }
 
-    public double getVolume() {
+    public double getCapacity() {
         return volume;
     }
 
-    public void setVolume(double volume) {
+    public void setCapacity(double volume) {
         this.volume = volume;
     }
 }

@@ -1,6 +1,6 @@
 package com.goit.gojavaonline.enterprise.generics.test;
 
-import com.goit.gojavaonline.enterprise.generics.BuildingValidator;
+import com.goit.gojavaonline.enterprise.generics.BuildingCapacityValidator;
 import com.goit.gojavaonline.enterprise.generics.Validator;
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 import com.goit.gojavaonline.enterprise.generics.buildings.House;
@@ -17,7 +17,7 @@ public class ValidatorTest {
 
     @Before
     public void setUp() throws Exception {
-        buildingValidator = new BuildingValidator(100);
+        buildingValidator = new BuildingCapacityValidator(100);
     }
 
     @Test

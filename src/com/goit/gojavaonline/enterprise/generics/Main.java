@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         List<Building> buildings = new ArrayList<>();
-        Validator<Building> buildingValidator = new BuildingValidator(100);
+        Validator<Building> buildingValidator = new BuildingCapacityValidator(100);
         Executor<Building> buildingExecutor = new BuildingExecutor();
 
         buildings.add(new House(10, 120, 30, "USSR", 3));
