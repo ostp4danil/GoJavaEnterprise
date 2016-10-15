@@ -46,10 +46,17 @@ public class BuildingExecutor implements Executor<Building> {
     }
 
     public List<? super Building> getValidResults() {
+        if(!isExecuted){
+            throw new IllegalStateException("Was not executed");
+        }
         return validResults;
     }
 
     public List<? super Building> getInvalidResults() {
+
+        if(!isExecuted){
+            throw new IllegalStateException("Was not executed");
+        }
         return invalidResults;
     }
 }

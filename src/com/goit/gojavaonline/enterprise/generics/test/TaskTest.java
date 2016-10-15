@@ -18,15 +18,18 @@ public class TaskTest {
     private List<Building> buildings = new ArrayList<>();
 
 
-    @Test(expected = NullPointerException.class)
+    @Test(expected = Exception.class)
     public void execute_whenTransmitsNullThenException(){
         buildingTask = new BuildingTask(buildings.iterator().next());
+
     }
 
     @Test
     public void task_whenSquare10ThenVolume100(){
         buildingTask = new BuildingTask(new Office(10,10,10,"test",10));
+        buildingTask.execute();
         double result = buildingTask.getResult().getCapacity();
-        Assert.assertEquals(100,result);
+        System.out.println(result);
+        Assert.assertEquals(100,(int)result);
     }
 }
