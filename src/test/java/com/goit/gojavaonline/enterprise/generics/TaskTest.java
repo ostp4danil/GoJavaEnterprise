@@ -1,7 +1,6 @@
-package com.goit.gojavaonline.enterprise.generics.test;
+package com.goit.gojavaonline.enterprise.generics;
 
-import com.goit.gojavaonline.enterprise.generics.BuildingTask;
-import com.goit.gojavaonline.enterprise.generics.Task;
+
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 import com.goit.gojavaonline.enterprise.generics.buildings.Office;
 import org.junit.Assert;
@@ -10,9 +9,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Danil-MAC on 8/29/16.
- */
 public class TaskTest {
     private Task<? extends Building> buildingTask;
     private List<Building> buildings = new ArrayList<>();

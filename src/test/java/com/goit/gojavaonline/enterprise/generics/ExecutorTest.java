@@ -1,14 +1,8 @@
-package com.goit.gojavaonline.enterprise.generics.test;
+package com.goit.gojavaonline.enterprise.generics;
 
 
-import com.goit.gojavaonline.enterprise.generics.BuildingExecutor;
-import com.goit.gojavaonline.enterprise.generics.BuildingTask;
-import com.goit.gojavaonline.enterprise.generics.BuildingCapacityValidator;
 import com.goit.gojavaonline.enterprise.generics.buildings.Building;
 import com.goit.gojavaonline.enterprise.generics.buildings.House;
-import com.goit.gojavaonline.enterprise.generics.Executor;
-import com.goit.gojavaonline.enterprise.generics.Task;
-import com.goit.gojavaonline.enterprise.generics.Validator;
 import org.junit.Before;
 import org.junit.Test;
 
